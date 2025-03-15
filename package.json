@@ -12,6 +12,7 @@
   "author": "David Adamson",
   "license": "MIT",
   "dependencies": {
+    "check-internet-connected": "^2.0.6",
     "puppeteer": "^24.4.0"
   },
   "devDependencies": {
