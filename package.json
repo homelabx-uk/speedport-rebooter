@@ -11,7 +11,9 @@
   },
   "author": "David Adamson",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "puppeteer": "^24.4.0"
+  },
   "devDependencies": {
     "@types/node": "^22.13.5",
     "esbuild": "^0.25.0",
