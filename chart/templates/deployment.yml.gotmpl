@@ -6,12 +6,7 @@ metadata:
     gitRevision: {{ .Values.git.revision | quote }}
     gitVersion: {{ .Values.git.version | quote }}
 spec:
-  replicas: {{ .Values.replicas }}
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 0 # Always keep existing pods running
-      maxSurge: 1 # Add one new pod before removing an old one
+  replicas: 1
   selector:
     matchLabels:
       app: {{ .Release.Name }}
@@ -24,19 +19,5 @@ spec:
         - name: app
           image: {{ .Values.image }}
           envFrom:
-            - configMapRef:
-                name: {{ .Release.Name }}
             - secretRef:
                 name: {{ .Release.Name }}
-          readinessProbe:
-            httpGet:
-              path: /
-              port: 3000
-            initialDelaySeconds: 3
-            periodSeconds: 5
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 3000
-            initialDelaySeconds: 5
-            periodSeconds: 30

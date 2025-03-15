@@ -11,10 +11,7 @@
   },
   "author": "David Adamson",
   "license": "MIT",
-  "dependencies": {
-    "@hono/node-server": "^1.13.8",
-    "hono": "^4.7.2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/node": "^22.13.5",
     "esbuild": "^0.25.0",
