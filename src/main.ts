@@ -4,6 +4,9 @@ import { isInternetConnected } from "@/is-internet-connected";
 const speedport = new Speedport(process.env.SPEEDPORT_PASSWORD!);
 const reboots = new Array<{ date: Date; rebootSuccess: boolean }>();
 
+await speedport.reboot();
+await new Promise((res) => setTimeout(res, 10 * 60 * 1000));
+
 // TODO add reporting
 /*const _reboots = reboots.splice(0);
 console.log(`network connection was lost ${_reboots.length} times.`);
