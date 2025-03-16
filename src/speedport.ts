@@ -4,7 +4,7 @@ export class Speedport {
   constructor(private readonly password: string) {}
 
   async reboot() {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({ args: ["--no-sandbox", "--disable-setuid-sandbox"] });
     const page = await browser.newPage();
 
     await page.goto("http://192.168.2.1/html/login/index.html");
